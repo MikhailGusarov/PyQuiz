@@ -15,7 +15,7 @@ class SimpleQuestion:
         self.count_points = count_point
 
     def __str__(self):
-        return self.count_points
+        return str(self.count_points)
 
 
 class Category:
@@ -57,7 +57,24 @@ for _ in range(int(count_teams)):
     team_name = input('Введите название команды: ')
     teams.append(Team(team_name))
 
-print("Выберите категорию:")
+print('Выберите категорию:')
 for i, category in enumerate(game.categories):
     print(i+1, category)
-current_category = game.categories[int(input("Введите номер картегории: ")) - 1]
+current_category = game.categories[int(input('Введите номер картегории: ')) - 1]
+
+print('Выберите сложность вопроса:')
+for question in current_category.questions:
+    print(question)
+current_question_count_points = input('Введите сложность вопроса: ')
+
+for question in current_category.questions:
+    if str(question) == current_question_count_points:
+        current_question = question
+        break
+
+print(current_question.content_question)
+answer = input('Ваш ответ: ')
+if answer == current_question.correct_answer:
+    print(f'И это правильный ответ! Вы получаете {current_question_count_points}')
+else:
+    print('Не правильно!')
