@@ -7,7 +7,7 @@ class Team:
         return self.name
 
 
-class Question:
+class SimpleQuestion:
     """Вопрос"""
     def __init__(self, content_question, correct_answer, count_point):
         self.content_question = content_question
@@ -15,12 +15,14 @@ class Question:
         self.count_points = count_point
 
     def __str__(self):
-        return self.count_point
+        return self.count_points
 
 
 class Category:
-    """Категория вопросов"""
-    def __init__(self, name, questions):
+    """Группа вопросов, разбитая по категориям"""
+    def __init__(self, name, questions=None):
+        if questions is None:
+            questions = []
         self.name = name
         self.questions = questions
 
@@ -28,12 +30,23 @@ class Category:
         return self.name
 
 
-questions_category = [Question('Сколько будет 2+2', '4', 1),
-                      Question('Если рыба-меч с острым носом, то птица с острым клювом - это?', 'жаба', 5),
-                      Question('Я ему сын сына, а он мне', 'дед', 3),
-                      Question('Острая кувалда', 'секира', 2)]
+class Game:
+    """Игра, как сущность объединения групп вопросов"""
+    def __init__(self, game_number, categories=None, date=None):
+        if categories is None:
+            categories = []
+        self.game_number = game_number
+        self.categories = categories
+        self.date = date
+
+
+questions_category = [SimpleQuestion('Сколько будет 2+2', '4', 1),
+                      SimpleQuestion('Если рыба-меч с острым носом, то птица с острым клювом - это?', 'жаба', 5),
+                      SimpleQuestion('Я ему сын сына, а он мне', 'дед', 3),
+                      SimpleQuestion('Острая кувалда', 'секира', 2)]
 
 test_category = Category('Просто котегория', questions_category)
+game = Game(1, [test_category])
 
 teams = []
 
@@ -44,3 +57,7 @@ for _ in range(int(count_teams)):
     team_name = input('Введите название команды: ')
     teams.append(Team(team_name))
 
+print("Выберите категорию:")
+for i, category in enumerate(game.categories):
+    print(i+1, category)
+current_category = game.categories[int(input("Введите номер картегории: ")) - 1]
