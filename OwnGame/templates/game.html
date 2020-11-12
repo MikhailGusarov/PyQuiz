@@ -1,5 +1,7 @@
-{% if game %}
-<p>{{ game }}</p>
-{% else %}
-<p>Такой игры нет. Проверьте ссылку</p>
-{% endif %}
+
+<h1>{{ game }}</h1>
+<ul>
+{% for category in game.category_set.all %}
+    <li>{{ category.name }}</li>
+{% endfor %}
+</ul>

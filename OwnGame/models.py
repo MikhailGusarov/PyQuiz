@@ -37,7 +37,7 @@ class Category(models.Model):
         return f'{self.game}: {self.name}'
 
 
-class SimpleQuestion(models.Model):
+class Question(models.Model):
     """Обычный вопрос"""
     category = models.ForeignKey(Category, on_delete=models.CASCADE,
                                  verbose_name='Категория', help_text='Выберите категорию')
@@ -91,7 +91,7 @@ class MatchTeam(models.Model):
 class MatchQuestion(models.Model):
     """Вопросы в матче"""
     play = models.ForeignKey(Match, on_delete=models.CASCADE, verbose_name='Матч')
-    question = models.ForeignKey(SimpleQuestion, on_delete=models.CASCADE, verbose_name='Вопрос')
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, verbose_name='Вопрос')
     is_done = models.BooleanField(verbose_name='Отвечен', default=False)
 
     def __str__(self):

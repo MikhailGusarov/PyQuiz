@@ -1,7 +1,7 @@
 {% if games %}
     <ul>
     {% for game in games%}
-        <li><a href="/OwnGame/{{game.number}}/">{{game}}</a></li>
+        <li><a href="{% url 'owngame:game' game.number %}">{{game}}</a></li>
     {% endfor %}
     </ul>
 {% else %}

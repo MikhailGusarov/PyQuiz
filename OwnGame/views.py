@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from .models import Game
 
@@ -10,6 +10,6 @@ def index(request):
 
 
 def game(request, game_number):
-    current_game = Game.objects.filter(number=game_number)
-    context = {'game': current_game[0]}
+    current_game = get_object_or_404(Game, number=game_number)
+    context = {'game': current_game}
     return render(request, 'game.html', context)
