@@ -4,7 +4,7 @@
 {% for category in game.category_set.all %}
     <li>{{ category.name }}</li>
     {% for question in category.question_set.all %}
-    <a href="{% url 'owngame:question' category.id %}{{question.count_points}}">{{question.count_points}}</a>
+    <a href="{% url 'owngame:question' game.number category.id question.count_points %}">{{question.count_points}}</a>
     {% endfor %}
 {% endfor %}
 </ul>
