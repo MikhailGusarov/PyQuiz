@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 {% if games %}
-    <ul>
+    <div class="main_games">
     {% for game in games%}
-        <li><a href="{% url 'owngame:game' game.number %}">{{game}}</a></li>
+
+            <div class="main_games_game">
+                <a href="{% url 'owngame:game' game.number %}"><p>{{game}}</p></a>
+            </div>
+
     {% endfor %}
-    </ul>
+    </div>
 {% else %}
 <p>Нет игр</p>
 {% endif %}

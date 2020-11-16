@@ -1,0 +1,25 @@
+.main {
+    margin: 10% auto;
+    width: 80%;
+}
+.main_games {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.main_games_game {
+    width: 30%;
+    height: 50px;
+    border: 1px solid green;
+}
+.main_games_game a {
+}
+.main_games_game p {
+    width: 100%;
+    height: 100%;
+    padding-top: 5%;
+    padding-bottom: -1%;
+    text-align: center;
+}
