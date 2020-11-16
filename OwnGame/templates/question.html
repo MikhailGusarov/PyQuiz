@@ -1,3 +1,9 @@
+{% extends "base.html" %}
+
+{% block title%} Своя игра. Игра № {{ game_number }}. Вопрос: {{ category_id }} {{ question.count_points }} {% endblock %}
+
+{% block content %}
 <h2>{{question.content_question}}</h2>
 
 <p>{{question.correct_answer}}</p>
+{% endblock %}

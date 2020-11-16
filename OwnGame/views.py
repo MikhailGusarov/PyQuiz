@@ -17,5 +17,9 @@ def game(request, game_number):
 
 def question(request, game_number, category_id, count_points):
     current_question = get_object_or_404(Question, count_points=count_points, category=category_id)
-    context = {'question': current_question}
+    context = {
+        'game_number': game_number,
+        'category_id': category_id,
+        'question': current_question
+    }
     return render(request, 'question.html', context)
