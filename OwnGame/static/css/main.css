@@ -6,10 +6,12 @@
     margin-left: 50px;
     margin-bottom: 75px;
 }
+
 .main {
     margin: 8% auto;
     width: 80%;
 }
+
 /* Страница с выбором игры */
 .main_games {
     display: flex;
@@ -18,14 +20,17 @@
     width: 100%;
     flex-wrap: wrap;
 }
+
 .main_games_game {
     width: 30%;
     border: 2px solid #007700;
     border-radius: 5%;
 }
+
 .main_games_game:hover {
     background-color: #007700;
 }
+
 .main_games_game p {
     padding-top: 10%;
     text-align: center;
@@ -35,8 +40,47 @@
     height: 60%;
     margin-bottom: 10%;
 }
+
 .main_games_game:hover p {
     color: white;
 }
 
 /* Страница игры */
+.game_category_question {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 6%;
+}
+
+.game_category{
+    color: #007700;
+    font-weight: bolder;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 24pt;
+    text-align: center;
+    width: 25%;
+}
+.game_question {
+    width: 10%;
+    border: 2px solid #007700;
+    border-radius: 5%;
+    height: 50px;
+}
+.game_question:hover {
+    background-color: #007700;
+}
+.game_question p {
+    padding-top: 15%;
+    text-align: center;
+    color: #007700;
+    font-weight: bolder;
+    font-family: sans-serif;
+    height: 85%;
+}
+.game_question:hover p {
+    color: white;
+}
