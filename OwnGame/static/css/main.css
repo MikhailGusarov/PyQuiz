@@ -1,4 +1,5 @@
-.main_games_header {
+/* Общие стили */
+.main h1 {
     font-size: 49pt;
     color: #007700;
     font-family: sans-serif;
@@ -9,6 +10,7 @@
     margin: 8% auto;
     width: 80%;
 }
+/* Страница с выбором игры */
 .main_games {
     display: flex;
     flex-direction: row;
@@ -36,3 +38,5 @@
 .main_games_game:hover p {
     color: white;
 }
+
+/* Страница игры */
