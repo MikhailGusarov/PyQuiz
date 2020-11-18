@@ -1,5 +1,12 @@
+.main_games_header {
+    font-size: 49pt;
+    color: #007700;
+    font-family: sans-serif;
+    margin-left: 50px;
+    margin-bottom: 75px;
+}
 .main {
-    margin: 10% auto;
+    margin: 8% auto;
     width: 80%;
 }
 .main_games {
@@ -19,9 +26,12 @@
 }
 .main_games_game p {
     padding-top: 10%;
-    padding-bottom: 10%;
     text-align: center;
-    color: black;
+    color: #007700;
+    font-weight: bolder;
+    font-family: sans-serif;
+    height: 60%;
+    margin-bottom: 10%;
 }
 .main_games_game:hover p {
     color: white;
