@@ -9,7 +9,11 @@
     <div class="game_category_question">
         <div class="game_category">{{ category.name }}</div>
         {% for question in category.question_set.all %}
-            <div class="game_question">
+            {% if category.id|add:question.count_points in questions_done %}
+                <div class="game_question game_question_is_done">
+            {% else %}
+                <div class="game_question">
+            {% endif %}
                 <a href="{% url 'owngame:question' game.number category.id question.count_points %}">
                     <p>{{question.count_points}}</p>
                 </a>
@@ -18,6 +22,7 @@
     </div>      
     {% endfor %}
 </div>
+
 <div class="back"><a href="{% url 'owngame:index' %}"><p>Назад</p></a></div>
 
 {% endblock %}

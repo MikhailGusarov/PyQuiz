@@ -85,6 +85,22 @@
     color: white;
 }
 
+.game_question_is_done {
+    border: 2px solid red;
+    
+}
+.game_question_is_done:hover {
+    background: none;
+}
+
+.game_question_is_done p {
+    color: red;
+}
+.game_question_is_done:hover p {
+    color: red;
+    cursor: default;
+}
+
 /* Страница вопроса */
 
 .question {
