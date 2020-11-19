@@ -113,7 +113,7 @@
 }
 
 .back p {
-    border: 2px solid green;
+    border: 2px solid #007700;
     width: 10%;
     padding: 1%;
     text-align: center;
@@ -122,4 +122,8 @@
     margin-left: 80%;
     margin-top: 7%;
     color: black;
+}
+.back p:hover{
+    background-color: #007700;
+    color: white;
 }
