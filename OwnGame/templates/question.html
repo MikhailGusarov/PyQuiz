@@ -11,5 +11,5 @@
 <p class="answer" style="display: none">Правильный ответ: {{question.correct_answer}}</p>
 
 
-<a class="back" style="display: none" href="{% url 'owngame:game' game_number %}"><p>Назад</p></a>
+<div class="back" style="display: none"><a href="{% url 'owngame:game' game_number %}"><p>Назад</p></a></div>
 {% endblock %}
